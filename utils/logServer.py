@@ -4,7 +4,7 @@ from datetime import datetime
 from loguru import logger
 
 
-class logServer:
+class logServer: # 根据您提供的代码，类名是 logServer
     """
     使用 Loguru 实现的日志服务类，仿照原有的 logServer 逻辑。
     提供单例模式，支持文件和控制台输出，自定义格式和颜色。
@@ -24,13 +24,13 @@ class logServer:
         if getattr(sys, 'frozen', False):
             executable_path = os.path.dirname(os.path.abspath(sys.executable))
         else:
-            executable_path = "/hy-tmp/Train_logs"
+            executable_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         executable_path = executable_path.replace('\\', '/')
-        self.docs_folder = "/hy-tmp/Train_logs"
+        self.docs_folder = os.path.join(executable_path, "logs")
         if not os.path.exists(self.docs_folder):
             os.makedirs(self.docs_folder, exist_ok=True)
         current_time = datetime.now().strftime('%Y%m%d_%H%M')
-        self.filename = os.path.join(self.docs_folder, f'训练记录_{current_time}.log')
+        self.filename = os.path.join(self.docs_folder, f'日记记录_{current_time}.log')
 
     def set_config(self, file_log_level="DEBUG", console_log_level="DEBUG"):
         """
@@ -46,7 +46,7 @@ class logServer:
 
         # 关键步骤：移除所有现有的 loguru handlers (包括默认的以及之前可能添加的)
         # 这样可以确保我们完全控制日志输出，避免重复
-        # logger.remove()
+        logger.remove()
 
         # 由于上面已经移除了所有 handlers，本实例之前记录的 handler ID 也应视作无效
         # (如果 run 被同一个实例多次调用，这一步是好的实践，确保状态干净)
@@ -69,6 +69,7 @@ class logServer:
         )
 
         console_format = (
+            "\n"
             "<level>"
             "{time:YYYY-MM-DD HH:mm:ss} - "
             "{level: <4} - "
