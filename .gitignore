@@ -1,0 +1,117 @@
+Qwen3-14b
+Qwen3-14b-finetuned
+Qwen3-14b-finetuned-merged
+Xinference
+Train_logs
+Qwen3-14b-finetuned-merged.tar
+
+
+# Byte-compiled Python files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+develop-eggs/
+eggs/
+parts/
+sdist/
+var/
+*.egg
+.eggs/
+
+# IDE/editor specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.vscode-test/
+*.code-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Virtual Environment
+.venv/
+pip-wheel-metadata/
+htmlcov/
+
+# Testing and Coverage
+.coverage
+.tox/
+.nox/
+coverage.xml
+nosetests.xml
+pytest_cache/
+
+# Logs and Databases
+*.log
+*.sqlite3
+*.db
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dependency caches
+**/__pycache__/
+**/node_modules/
+**/.mypy_cache/
+**/.pytest_cache/
+**/.hypothesis/
+
+# PyCharm specific
+*.iml
+.idea/
+*.idea/
+
+# Docker
+docker-compose.override.yml
+.dockerenv
+docker-compose.yml
+Dockerfile.*
+Dockerfile
+
+# Local configuration files
+.env
+.env.local
+.flaskenv
+.settings
+.config
+secrets.json
+
+# Temporary files
+*~
+.*.swp
+*.tmp
+*.bak
+
+# Sphinx documentation
+docs/_build/
+
+# Static files (if applicable)
+/static/
+/media/
+
+# Distribution archives
+/dist/
+/build/
+/wheelhouse/
+
+# PyInstaller
+*.spec
+
+# CI/CD related
+.github/workflows/*.log
+
+# Custom files (project-specific)
+# Add any project-specific files or directories here
